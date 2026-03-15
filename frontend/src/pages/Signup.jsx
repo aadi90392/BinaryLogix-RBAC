@@ -47,7 +47,7 @@ export default function Signup() {
         <form onSubmit={handleSubmit} className="space-y-5">
           <div>
             <label className="block text-sm font-semibold text-slate-700 mb-1.5">Full Name</label>
-            <input type="text" name="name" onChange={handleChange} required className="w-full p-2.5 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors bg-slate-50 focus:bg-white" placeholder="John Doe" />
+            <input type="text" name="name" onChange={handleChange} required className="w-full p-2.5 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors bg-slate-50 focus:bg-white" placeholder="Aditya Upadhyay " />
           </div>
           
           <div>
