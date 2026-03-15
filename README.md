@@ -1,6 +1,6 @@
 # BinaryLogix Role-Based Access Control (RBAC) Portal
 
-This is a full-stack MERN application developed for the BinaryLogix placement task. It implements a secure, hierarchical Role-Based Access Control system for Admins, Managers, and standard Users.
+This is a full-stack MERN application. It implements a secure, hierarchical Role-Based Access Control system for Admins, Managers, and standard Users.
 
 ##  Features Implemented
 - **Public Landing Page:** Clean UI with system introduction and quick access.

@@ -47,11 +47,13 @@ export default function ManagerDashboard() {
     e.preventDefault();
     try {
       const token = localStorage.getItem('token');
-      await axios.put(`http://localhost:5000/api/users/profile`, editModal, { headers: { Authorization: `Bearer ${token}` } });
+      await axios.put(`http://localhost:5000/api/users/edit/${editModal._id}`, editModal, { 
+        headers: { Authorization: `Bearer ${token}` } 
+      });
       toast.success('User details updated!');
       setEditModal(null);
       fetchData();
-    } catch (err) { toast.error('Update failed'); }
+    } catch (err) { toast.error(err.response?.data?.message || 'Update failed'); }
   };
 
   if (loading) return <div className="min-h-screen flex items-center justify-center font-bold text-slate-600">Loading Manager Portal...</div>;
@@ -163,10 +165,6 @@ export default function ManagerDashboard() {
                 <div>
                   <label className="text-xs font-bold text-slate-500 uppercase">Phone</label>
                   <input type="text" value={editModal.phone} onChange={(e)=>setEditModal({...editModal, phone:e.target.value})} className="w-full p-2.5 border rounded-lg bg-slate-50" />
-                </div>
-                <div>
-                  <label className="text-xs font-bold text-slate-500 uppercase">Address</label>
-                  <input type="text" value={editModal.address} onChange={(e)=>setEditModal({...editModal, address:e.target.value})} className="w-full p-2.5 border rounded-lg bg-slate-50" />
                 </div>
                 <div className="flex gap-3 pt-4">
                   <button type="button" onClick={()=>setEditModal(null)} className="flex-1 bg-slate-200 p-2.5 rounded-lg font-bold hover:bg-slate-300">Cancel</button>
